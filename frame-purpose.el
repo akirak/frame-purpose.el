@@ -124,7 +124,7 @@ but it should help)."
 DIRECTORY defaults to the current buffer's directory."
   (interactive)
   (setq directory (or directory default-directory))
-  (frame-purpose-make-frame :filenames directory
+  (frame-purpose-make-frame :filenames (regexp-quote (expand-file-name directory))
                             :title (file-name-nondirectory (directory-file-name directory))))
 
 ;;;###autoload
